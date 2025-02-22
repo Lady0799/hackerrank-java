@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+        
+        // Write your code here.
+        NumberFormat nfUS = NumberFormat.getCurrencyInstance(Locale.US);
+        NumberFormat nfCH = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        NumberFormat nfFR = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        NumberFormat nfIN = NumberFormat.getCurrencyInstance(new Locale("en","IN"));
+        System.out.println("US: " + nfUS.format(payment));
+        System.out.println("India: " + nfIN.format(payment));
+        System.out.println("China: " + nfCH.format(payment));
+        System.out.println("France: " + nfFR.format(payment));
+    }
+}
